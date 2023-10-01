@@ -9,6 +9,10 @@ import java.time.Duration;
 
 public class HW2Test {
 
+    /*
+    тестирование поля-заполнения
+     */
+
     @Test
     public void demoQaTextBox() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
@@ -55,5 +59,39 @@ public class HW2Test {
 
         driver.quit();
     }
+
+    /*
+    тестирование поля-заполнения
+     */
+    @Test
+    public void demoQaRadioButton() throws InterruptedException {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://demoqa.com/radio-button");
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
+
+        WebElement radioButtonYes = driver.findElement(By.xpath("//*[@for = 'yesRadio']"));
+        radioButtonYes.click();
+        WebElement radioButtonYesConfirm = driver.findElement(By.xpath("//*[@class ='text-success']"));
+        String textRadioButtonYesConfirm = radioButtonYesConfirm.getText();
+        Assert.assertEquals(textRadioButtonYesConfirm, "Yes");
+
+        WebElement radioButtonImpressive = driver.findElement(By.xpath("//*[@for = 'impressiveRadio']"));
+        radioButtonImpressive.click();
+        WebElement radioButtonImpressiveConfirm = driver.findElement(By.xpath("//*[@class ='text-success']"));
+        String textRadioButtonImpressiveConfirm = radioButtonImpressiveConfirm.getText();
+        Assert.assertEquals(textRadioButtonImpressiveConfirm, "Impressive");
+
+        WebElement noRadioButton = driver.findElement(By.xpath("//*[@id = 'noRadio']"));
+        Assert.assertNotNull(noRadioButton.getAttribute("disabled"));
+
+        driver.quit();
+
+
+
+
+    }
+
+
 
 }
