@@ -64,7 +64,7 @@ public class HW2Test {
     тестирование поля-заполнения
      */
     @Test
-    public void demoQaRadioButton() throws InterruptedException {
+    public void demoQaRadioButton() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://demoqa.com/radio-button");
 
@@ -87,11 +87,5 @@ public class HW2Test {
 
         driver.quit();
 
-
-
-
     }
-
-
-
 }
