@@ -74,7 +74,7 @@ public class StudentRegistrationFormTest {
     @AfterMethod
     public void closeUp() {
         driver.close();
-        System.out.println("The close_up process is completed");
+        System.out.println("The close_up process is completed1");
         driver.quit();
         System.out.println("The quit process is completed");
     }
