@@ -7,7 +7,7 @@ public class HW1Test {
 
     @Test
     public void testSum(){
-        Assert.assertEquals(AriphmeticOperation.plus(1,2), 3);
+        Assert.assertEquals(AriphmeticOperation.plus(2,2), 4);
     }
 
     @Test
