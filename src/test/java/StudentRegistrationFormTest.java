@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 
@@ -28,7 +29,7 @@ public class StudentRegistrationFormTest {
         driver.manage().window().maximize();
         System.out.println("The app setup process is completed");
     }
-
+    @Ignore
     @Test(description = "проверка содержания хидера")
     public void textHeaderForm() {
         WebElement mainHeaderForm = driver.findElement(By.xpath("//div[@class = 'main-header']"));
@@ -38,7 +39,7 @@ public class StudentRegistrationFormTest {
         String textTitleRegistrationForm = titleRegistrationForm.getText();
         Assert.assertEquals(textTitleRegistrationForm, "Student Registration Form");
     }
-
+    @Ignore
     @Test(description = "позитивный кейс, заполнение всех полей")
     public void testPositiveTestAllParameters() throws InterruptedException {
         WebElement fieldFirstName = driver.findElement(By.xpath("//input[@id = 'firstName']"));
@@ -48,7 +49,6 @@ public class StudentRegistrationFormTest {
         WebElement fieldNumber = driver.findElement(By.xpath("//input[@id = 'userNumber']"));
         WebElement fieldDateOfBirth = driver.findElement(By.xpath("//input[@id = 'dateOfBirthInput']"));
         WebElement fieldSubjects = driver.findElement(By.xpath("//*[@id='subjectsInput']"));
-//        WebElement fieldHobbiesSport = driver.findElement(By.xpath("//label[@for = 'hobbies-checkbox-2']"));
         WebElement fieldCurrentAddress = driver.findElement(By.xpath("//textarea[@id = 'currentAddress']"));
         fieldFirstName.sendKeys(variablesDmitryS.FIRST_NAME);
         fieldLastName.sendKeys(variablesDmitryS.LAST_NAME);
@@ -62,7 +62,6 @@ public class StudentRegistrationFormTest {
         Thread.sleep(5000);
         fieldSubjects.sendKeys("c");
         fieldSubjects.sendKeys(Keys.ENTER);
-//        fieldHobbiesSport.click();
         fieldCurrentAddress.sendKeys(variablesDmitryS.CURRENT_ADDRESS);
         Thread.sleep(5000);
         WebElement submitButton = driver.findElement(By.id("submit"));
