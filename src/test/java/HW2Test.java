@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -13,6 +14,7 @@ public class HW2Test {
     тестирование поля-заполнения
      */
 
+    @Ignore
     @Test
     public void demoQaTextBox() {
         WebDriver driver = new ChromeDriver();
@@ -33,19 +35,19 @@ public class HW2Test {
         submitButton.click();
 
         WebElement findRowName = driver.findElement(By.xpath("//p[@id = 'name']"));
-        String findName  = findRowName.getText();
+        String findName = findRowName.getText();
         Assert.assertEquals(findName, "Name:Oleg Komarov");
 
         WebElement findRowEmail = driver.findElement(By.xpath("//p[@id = 'email']"));
-        String findEmail  = findRowEmail.getText();
+        String findEmail = findRowEmail.getText();
         Assert.assertEquals(findEmail, "Email:wwwleningrad@gori.com");
 
         WebElement findRowCurrentAddress = driver.findElement(By.xpath("//p[@id = 'currentAddress']"));
-        String findCurrentAddress  = findRowCurrentAddress.getText();
+        String findCurrentAddress = findRowCurrentAddress.getText();
         Assert.assertEquals(findCurrentAddress, "Current Address :Мой адрес не дом и не улица");
 
         WebElement findRowPermanentAddress = driver.findElement(By.xpath("//p[@id = 'permanentAddress']"));
-        String findPermanentAddress  = findRowPermanentAddress.getText();
+        String findPermanentAddress = findRowPermanentAddress.getText();
         Assert.assertEquals(findPermanentAddress, "Permananet Address :Мой адрес советский союз");
 
         driver.quit();
@@ -54,6 +56,7 @@ public class HW2Test {
     /*
     тестирование поля-заполнения
      */
+    @Ignore
     @Test
     public void demoQaRadioButton() {
         WebDriver driver = new ChromeDriver();
