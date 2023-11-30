@@ -48,7 +48,6 @@ public class StudentRegistrationFormTest {
         WebElement fieldNumber = driver.findElement(By.xpath("//input[@id = 'userNumber']"));
         WebElement fieldDateOfBirth = driver.findElement(By.xpath("//input[@id = 'dateOfBirthInput']"));
         WebElement fieldSubjects = driver.findElement(By.xpath("//*[@id='subjectsInput']"));
-//        WebElement fieldHobbiesSport = driver.findElement(By.xpath("//label[@for = 'hobbies-checkbox-2']"));
         WebElement fieldCurrentAddress = driver.findElement(By.xpath("//textarea[@id = 'currentAddress']"));
         fieldFirstName.sendKeys(variablesDmitryS.FIRST_NAME);
         fieldLastName.sendKeys(variablesDmitryS.LAST_NAME);
@@ -62,7 +61,6 @@ public class StudentRegistrationFormTest {
         Thread.sleep(5000);
         fieldSubjects.sendKeys("c");
         fieldSubjects.sendKeys(Keys.ENTER);
-//        fieldHobbiesSport.click();
         fieldCurrentAddress.sendKeys(variablesDmitryS.CURRENT_ADDRESS);
         Thread.sleep(5000);
         WebElement submitButton = driver.findElement(By.id("submit"));

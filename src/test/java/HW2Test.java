@@ -14,7 +14,7 @@ public class HW2Test {
      */
 
     @Test
-    public void demoQaTextBox() throws InterruptedException {
+    public void demoQaTextBox() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://demoqa.com/text-box");
 
@@ -27,20 +27,11 @@ public class HW2Test {
         WebElement submitButton = driver.findElement(By.xpath("//button[@id='submit']"));
 
         fullName.sendKeys("Oleg Komarov");
-        Thread.sleep(1000);
-
         eMail.sendKeys("wwwleningrad@gori.com");
-        Thread.sleep(1000);
-
         currentAdress.sendKeys("Мой адрес не дом и не улица");
-        Thread.sleep(1000);
-
         permamentAdress.sendKeys("Мой адрес советский союз");
-        Thread.sleep(1000);
-
         submitButton.click();
 
-        Thread.sleep(1000);
         WebElement findRowName = driver.findElement(By.xpath("//p[@id = 'name']"));
         String findName  = findRowName.getText();
         Assert.assertEquals(findName, "Name:Oleg Komarov");
