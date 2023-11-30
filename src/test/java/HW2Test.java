@@ -26,7 +26,7 @@ public class HW2Test {
         WebElement permamentAdress = driver.findElement(By.xpath("//textarea[@id='permanentAddress']"));
         WebElement submitButton = driver.findElement(By.xpath("//button[@id='submit']"));
 
-        fullName.sendKeys("Oleg Komarov");
+        fullName.sendKeys("Oleg Komarovv");
         eMail.sendKeys("wwwleningrad@gori.com");
         currentAdress.sendKeys("Мой адрес не дом и не улица");
         permamentAdress.sendKeys("Мой адрес советский союз");
